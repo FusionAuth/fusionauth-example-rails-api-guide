@@ -36,7 +36,7 @@ For now, get FusionAuth in Docker up and running (via `docker compose up`) if it
 Call FusionAuth to get an access token. For ease of use, these instructions will use the Login API, but you could also get the access token via the hosted login pages.
 
 ```
-curl -H 'Authorization: this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works' http://localhost:9011/api/login -H 'Content-type: application/json' -d '{"loginId": "richard@example.com", "password":"password","applicationId": "E9FDB985-9173-4E01-9D73-AC2D60D1DC8E"}'
+curl -H 'Authorization: this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works' http://localhost:9011/api/login -H 'Content-type: application/json' -d '{"loginId": "richard@example.com", "password":"password","applicationId": "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e"}'
 ```
 
 Copy the `token` value, then place it in the `app.at` cookie.
