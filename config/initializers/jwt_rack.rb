@@ -12,7 +12,7 @@ jwt_auth_args = {
       secret: nil,
       options: {
         cookie_name: 'app.at',
-        iss: 'acme.com',
+        iss: 'http://localhost:9011',
         verify_iss: true,
         aud: 'e9fdb985-9173-4e01-9d73-ac2d60d1dc8e',
         verify_aud: true,
