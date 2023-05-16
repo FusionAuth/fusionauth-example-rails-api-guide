@@ -1,7 +1,7 @@
 require 'net/http'
 require 'jwt'
 
-source = 'https://local.fusionauth.io/.well-known/jwks.json'
+source = 'http://localhost:9011/.well-known/jwks.json'
 resp = Net::HTTP.get_response(URI.parse(source))
 data = resp.body
 jwks_hash = JSON.parse(data)
@@ -11,10 +11,10 @@ jwks.select! { |key| key[:use] == 'sig' } # Signing Keys only
 jwt_auth_args = {
       secret: nil,
       options: {
-        cookie_name: 'cook', # documented that it goes in args hash, but https://github.com/mindfulchefuk/rack-jwt/blob/master/lib/rack/jwt/auth.rb#L51 indicates otherwise
+        cookie_name: 'app.at',
         iss: 'acme.com',
         verify_iss: true,
-        aud: '85a03867-dccf-4882-adde-1a79aeec50df',
+        aud: 'e9fdb985-9173-4e01-9d73-ac2d60d1dc8e',
         verify_aud: true,
         verify_iat: true,
         verify_expiration: true,
