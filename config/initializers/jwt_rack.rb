@@ -1,7 +1,7 @@
 require 'net/http'
 require 'jwt'
 
-source = 'http://localhost:9011/.well-known/jwks.json'
+source = ENV['FUSIONAUTH_LOCATION'] + '/.well-known/jwks.json'
 resp = Net::HTTP.get_response(URI.parse(source))
 data = resp.body
 jwks_hash = JSON.parse(data)
@@ -12,9 +12,9 @@ jwt_auth_args = {
       secret: nil,
       options: {
         cookie_name: 'app.at',
-        iss: 'http://localhost:9011',
+        iss: ENV['FUSIONAUTH_LOCATION'],
         verify_iss: true,
-        aud: 'e9fdb985-9173-4e01-9d73-ac2d60d1dc8e',
+        aud: ENV['CLIENT_ID'],
         verify_aud: true,
         verify_iat: true,
         verify_expiration: true,
