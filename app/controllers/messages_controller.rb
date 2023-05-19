@@ -4,7 +4,10 @@ class MessagesController < ApplicationController
     messages << "Hello"
 
     # further claims/authorization checks
-    roles = request.env['jwt.payload']['roles']
+    roles = []
+    if request.env['jwt.payload'] && request.env['jwt.payload']['roles']
+      roles = request.env['jwt.payload']['roles']
+    end
     if roles.include?('ceo') 
       messages << "Hiya, boss"
     end
