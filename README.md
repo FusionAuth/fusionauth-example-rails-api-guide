@@ -1,3 +1,5 @@
+**This repo is out of date and is archived. Check out [an updated tutorial on using FusionAuth with a Ruby on Rails API](https://fusionauth.io/docs/quickstarts/quickstart-ruby-on-rails-api) or [the updated GitHub repository](https://github.com/FusionAuth/fusionauth-quickstart-ruby-on-rails-api).**
+
 # Example: Using a Rails API with FusionAuth
 
 This project contains an example project that illustrates using FusionAuth with Rails7 for an API.
